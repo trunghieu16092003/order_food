@@ -4,13 +4,14 @@ import { Col } from "antd";
 
 export const HeaderWrapper = styled.div`
   background-color: #ffffff;
-  padding: 10px 0;
+  padding: 10px 20px;
   width: 100%;
-  position: relative;
+
   box-sizing: border-box;
 `;
 
 export const CenteredCol = styled(Col)`
+  position: relative;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -23,6 +24,10 @@ export const Logo = styled.div`
     max-width: 100%;
     height: auto;
   }
+  @media (max-width: 480px) {
+    width: 150px;
+    height: 100px;
+  }
 `;
 
 export const NavList = styled.ul<{ isMenuVisible: boolean }>`
@@ -31,11 +36,11 @@ export const NavList = styled.ul<{ isMenuVisible: boolean }>`
   margin: 0;
   padding: 0;
   align-items: center;
-  @media (max-width: 1200px) {
+  @media (max-width: 480px) {
     display: none;
     flex-direction: column;
     position: fixed;
-    top: 150px;
+    top: 120px;
     left: 0;
     background-color: #ffffff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -71,7 +76,7 @@ export const NavItem = styled.li`
     padding: 10px 20px;
     cursor: pointer;
   }
-  @media (max-width: 1200px) {
+  @media (max-width: 480px) {
     display: flex;
     width: 100%;
     margin-left: 30px;
@@ -134,17 +139,19 @@ export const CartLink = styled(Link)`
 
 export const MenuButton = styled.div`
   display: none;
-  @media (max-width: 1200px) {
+  @media (max-width: 480px) {
     display: block;
     cursor: pointer;
   }
 `;
 
 export const Banner = styled.div`
-  width: 1500px;
+  box-sizing: border-box;
+  width: 100%;
   margin-top: 20px;
 
   img {
+    box-sizing: border-box;
     width: 100%;
   }
 `;

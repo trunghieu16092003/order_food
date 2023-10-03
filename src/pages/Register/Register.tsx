@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import useLoginForm from "../../hooks/useRegisterForm";
-import "../../cssComponent/form.css";
+
 function Register() {
   const { handleSubmit, register, formState, reset } = useLoginForm();
   return (
@@ -9,7 +9,7 @@ function Register() {
         onSubmit={handleSubmit((data) => {
           if (data) {
             console.log(data);
-            alert("Successfully");
+
             reset();
           }
         })}
