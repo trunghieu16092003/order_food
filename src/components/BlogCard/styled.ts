@@ -19,7 +19,6 @@ export const Wrapper = styled.div`
 export const Img = styled.div`
   margin: 10px 10px 0 10px;
   background-color: #fff;
-  border-bottom: 0 solid rgba(0, 0, 0, 0.125);
   width: 380px;
   height: 200px;
   img {

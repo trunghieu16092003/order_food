@@ -2,18 +2,18 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import { BiSolidRightArrow } from "react-icons/bi";
-import { Container } from "./styled";
+import * as Styles from "./styled";
 
 const BlogSidebarRight = () => {
   return (
-    <Container>
-      <form>
+    <Styles.Container>
+      <Styles.Form>
         <label htmlFor="">Search</label>
         <div>
           <input type="text" />
           <button>Search</button>
         </div>
-      </form>
+      </Styles.Form>
       <div>
         <h1>Recent Posts</h1>
         <ul>
@@ -40,7 +40,7 @@ const BlogSidebarRight = () => {
       <div>
         <h1>Recent Comment</h1>
       </div>
-    </Container>
+    </Styles.Container>
   );
 };
 

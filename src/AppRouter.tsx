@@ -9,6 +9,7 @@ import Home from "./pages/Home/Home";
 import ProductDetail from "./pages/ProductDetail";
 import path from "./constants/path";
 import Blog from "./pages/Blog";
+import BlogDetail from "./pages/BlogDetail";
 
 export default function AppRouter() {
   return (
@@ -20,8 +21,9 @@ export default function AppRouter() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/product/:id" element={<ProductDetail />} />
+        <Route path={path.PRODUCT_DETAIL} element={<ProductDetail />} />
         <Route path={path.BLOG} element={<Blog />} />
+        <Route path={path.BLOG_DETAIL} element={<BlogDetail />} />
         <Route path="/aboutUs" />
       </Route>
     </Routes>
