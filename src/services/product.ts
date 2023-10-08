@@ -7,8 +7,8 @@ export default class ProductServices {
   }
 
   getProducts() {
-    return this.restClient.get<{
-      title: string;
-    }>("https://fakestoreapi.com/products/1");
+    return this.restClient.get<any[]>(
+      `${this.restClient.config.baseURL}product/get_all_product.php`
+    );
   }
 }

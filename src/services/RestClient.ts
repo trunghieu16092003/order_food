@@ -7,7 +7,6 @@ const DEFAULT_CONFIG = {
     "Content-Type": "application/json",
   },
 };
-console.log(DEFAULT_CONFIG);
 
 export default class RestClient {
   config: AxiosRequestConfig;

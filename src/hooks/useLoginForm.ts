@@ -3,17 +3,17 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 
 interface LoginFormStateType {
-  username: string;
+  email: string;
   password: string;
 }
 
 const defaultValues: LoginFormStateType = {
-  username: "",
+  email: "",
   password: "",
 };
 
 const schema = Yup.object({
-  username: Yup.string().trim().required("userame is required"),
+  email: Yup.string().trim().required("email is required"),
   password: Yup.string()
     .required("Phone is required")
     .min(10, "Phone must be at least 10 characters"),

@@ -1,22 +1,35 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate, Navigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+
 import useLoginForm from "../../hooks/useLoginForm";
+import { userServices } from "../../services";
+import { loginSuccess } from "../../redux/user/userSlice";
+import path from "../../constants/path";
 
 function Login() {
   const { handleSubmit, register, formState } = useLoginForm();
+  const isAuth = localStorage.getItem("token");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const handleSubmitLogin = async (values: any) => {
+    try {
+      const res = await userServices.login(values.email, values.password);
+      dispatch(loginSuccess(res.token));
+      navigate(path.HOME);
+    } catch (error) {}
+  };
+
+  if (isAuth) {
+    return <Navigate to={path.HOME} />;
+  }
   return (
     <div className="model">
-      <form
-        onSubmit={handleSubmit((data) => {
-          console.log(data);
-          alert("Successfully");
-        })}
-        action=""
-      >
+      <form onSubmit={handleSubmit(handleSubmitLogin)}>
         <div className="form__item">
-          <label htmlFor="name">Username</label>
-          <input {...register("username")} id="name" />
+          <label htmlFor="name">Email</label>
+          <input {...register("email")} id="name" />
           <span style={{ color: "red" }}>
-            {formState.errors.username?.message}
+            {formState.errors.email?.message}
           </span>
         </div>
         <div className="form__item">

@@ -15,12 +15,12 @@ export default function AppRouter() {
   return (
     <Routes>
       <Route element={<AuthorizationUserLayout />}>
-        <Route path="/cart" element={<Cart />} />
+        <Route path={path.CART} element={<Cart />} />
       </Route>
       <Route element={<DefaultLayout />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        <Route path={path.HOME} element={<Home />} />
+        <Route path={path.LOGIN} element={<Login />} />
+        <Route path={path.REGISTER} element={<Register />} />
         <Route path={path.PRODUCT_DETAIL} element={<ProductDetail />} />
         <Route path={path.BLOG} element={<Blog />} />
         <Route path={path.BLOG_DETAIL} element={<BlogDetail />} />
